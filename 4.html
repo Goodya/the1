@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            display: block;
+        }
+        li{
+            list-style:none;
+        }
+        #list{
+            width: 409px;
+            height: 30px;
+        }
+        #list .last{
+            margin-right: 0;
+        }
+        #list li{
+            width: 100px;
+            height: 30px;
+            background: #0f0;
+            float: left;
+            margin-right: 3px;;
+        }
+        #list a{
+            width: 100%;
+            height: 100%;
+            background: #0f0;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+        }
+        .click{
+            float: none;
+            margin-top:2px;
+        }
+        #list a:hover{
+            background: #00f;
+        }
+        .one{
+            display: none;
+        }
+        ul li:hover .one{  display: block;  }
+
+    </style>
+</head>
+<body>
+<div id="list">
+    <ul>
+        <li><a href="">link1</a>
+            <ul class="one">
+            <li class="click"><a href="">one</a></li>
+            <li class="click"><a href="">two</a></li>
+            </ul>
+        </li>
+        <li><a href="">link2</a></li>
+        <li><a href="">link3</a></li>
+        <li class="last"><a href="">link4</a></li>
+    </ul>
+
+</div>
+</body>
+</html>
