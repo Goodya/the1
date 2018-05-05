@@ -1,0 +1,42 @@
+/* 公用样式 */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+img{
+    border: 0;
+}
+
+.wrapper{
+    width: 1230px;
+    margin: 0 auto;
+    height: 100%;
+    /*background: #ff0000;*/
+}
+#menu li{
+    float: left;
+    margin-right:10px;
+}
+#menu a{
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+#menu img{
+    width: 100px;
+    margin-top:3px;;
+}
+#menu .main-nav{
+    height: 36px;
+    line-height: 36px;
+    margin-left: 200px;
+}

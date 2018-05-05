@@ -1,0 +1,131 @@
+#header {
+    height: 32px;
+    background: #f2f2f2;
+    color: #999;
+    line-height: 32px;
+    font-size: 12px;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    border-bottom: 1px solid #e5e5e5;
+}
+#login-info{
+    width: 218px;
+    height: 100%;
+    float: left;
+}
+#login-info .login{
+    margin: 0 10px;
+}
+#quick-menu{
+    width: 530px;
+    height: 100%;
+    float: right;
+}
+#quick-menu .menu{
+    float: left;
+    padding: 0 14px;
+    cursor: pointer;
+}
+#header a{
+    color: #999;
+}
+#header a:hover{
+    color: #f00;
+}
+
+#quick-menu .icon-gouwuche{
+    color: #f00;
+    font-size: 12px;
+}
+#quick-menu .menu-hd {
+    position: relative;
+    border-width: 0 1px 0 1px;
+    border-style: solid;
+    border-color: transparent;
+
+}
+#quick-menu .menu-hd a:hover{
+    text-decoration: underline;
+    color: #f00;
+}
+#quick-menu .menu-hd:hover{
+    background: #ffffff;
+    border-color: transparent #f2f2f2 transparent #f2f2f2;
+}
+
+#quick-menu .menu-hd:hover > a{
+    color: #f00;
+}
+#quick-menu .triangle::after{
+    content: '';
+    width: 0;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #bbb transparent transparent transparent;
+    position: absolute;
+    right: 6px;
+    top: 16px;
+    transform-origin: 3px 1.5px;
+    transition: none;
+
+}
+#quick-menu .menu:hover::after{
+    transform: rotate(180deg);
+    transition: transform .3s ease;
+}
+#search .logo{
+    width: 240px;
+}
+#search .wrapper{
+    position: relative;
+}
+#search .search-contect{
+    width: 628px;
+    height: 76px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -38px;
+    margin-left: -314px;
+}
+#search .search-input {
+    border:2px solid #ff0036;
+    height: 36px;
+
+}
+#search .search-contect input{
+    width: 491px;
+    height: 36px;
+    outline: 0;
+    border: 0;
+    float: left;
+    text-indent: 10px;
+    font-size: 16px;
+}
+#search .search-contect button{
+    width: 132px;
+    height: 36px;
+    border: 0;
+    background-color: #ff0036;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    float: right;
+}
+#search .hot-query{
+    margin-top:10px;
+}
+#search .hot-query li{
+    float: left;
+    border-right: 1px solid #999;
+    padding: 0 12px;
+}
+#search .hot-query a{
+    color: #999;
+}
+#search .hot-query-highlight a{
+    color: #ff0036;
+}
+#search li.last{
+    border-right:0;
+}
+
