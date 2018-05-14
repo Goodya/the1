@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var age = prompt("请输入年龄");
+    function getage (age) {
+        var a;
+        if (age <= 0){
+            a="没出生的";
+            return a;
+        }else if(age < 14){
+            a="儿童";
+            return a;
+        }else if(age <24){
+            a="青少年";
+            return a;
+        }else if(age < 40){
+            a="青年";
+            return a;
+        }else if(age < 60){
+            a="中年";
+            return a;
+        }else if(age >= 60){
+            a="老年";
+            return a;
+        }
+    }
+    var b;
+    b = getage(age);
+    document.write("他是" + b +"人");
+
+
+</script>
+</body>
+</html>

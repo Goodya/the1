@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function math(c) {
+        var a=1 , b=1 ;
+        while (a <= c){
+            b= b * a ;
+            a++
+        }
+        return b;
+    }
+    var sum=0;
+    for (var d=1; d<=10 ; d++)
+    sum += math(d);
+    document.write("结果为：" + sum);
+
+//    document.write("结果为：" + (math(1)+math(2)+math(3)+math(4)+math(5)+math(6)+math(7)+math(8)+math(9)+math(10)));
+</script>
+
+
+</body>
+</html>

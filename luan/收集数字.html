@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function CollectDigits(str) {
+        var arr = str.split(""), arr1 = [],str1 = "";
+        for (var i = 0, len = arr.length - 1; i <= len; i++) {
+            arr[i] = arr[i] * 1 ;
+            if(!(isNaN(arr[i]))){
+                str1 +=arr[i];
+                arr1.push(arr[i]);
+            }
+        }
+        document.write(str1);
+    }
+
+    CollectDigits("stri316848");
+</script>
+
+</body>
+</html>
