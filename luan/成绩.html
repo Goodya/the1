@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function grade(n) {
+        var arr = [],gra,sum = 0,fail = [] ;
+        for (var i=1 ; i <= n ; i++){
+            gra = prompt("请输入第" + i + "门课程的成绩") * 1;
+            sum += gra;
+            arr.push(gra);
+            if(gra < 60){
+                fail.push(gra);
+            }
+        }
+        document.write("总成绩为：" + sum + "<br>" + "平均成绩为：" + sum / n + "<br>");
+        document.write("不及格的成绩为：" + fail);
+    }
+    grade(7);
+</script>
+</body>
+</html>
