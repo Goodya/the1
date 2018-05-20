@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #div{
+            width: 520px;
+            height: 280px;
+            border: solid 1px ;
+            position: relative;
+            margin: 100px auto;
+        }
+        #ul{
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+        }
+        #ul li{
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            border: solid 1px;
+            text-align: center;
+            cursor: pointer;
+            float: left;
+            margin-right: 10px;
+        }
+        #div1{
+            position: relative;
+            height: 280px;
+        }
+        #div1 div{
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+        #div1 .show{
+            display: block;
+        }
+        #ul1{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+        #ul1 li{
+            width: 15px;
+            height: 15px;
+            list-style: none;
+            float: left;
+            margin-right: 5px;
+            border: solid 1px;
+            text-align: center;
+            line-height: 15px;
+            cursor: pointer;
+        }
+        #ul .show{
+            background: #29CC8B;
+
+        }
+        /*#ul .show:hover{*/
+            /*background: #29CC8B;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div id="div">
+    <div id="div1">
+        <div class="show"><img src="images/1.jpg" alt=""></div>
+        <div><img src="images/2.jpg" alt=""></div>
+        <div><img src="images/3.jpg" alt=""></div>
+        <div><img src="images/4.jpg" alt=""></div>
+    </div>
+    <ul id="ul">
+        <li class="show">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <ul id="ul1">
+        <li>&lt;</li>
+        <li>&gt;</li>
+    </ul>
+    <script>
+        var oDiv1 = document.getElementById('div1');
+        var oDiv = oDiv1.getElementsByTagName('div');
+        var oUl = document.getElementById('ul');
+        var oLi = oUl.getElementsByTagName('li');
+        var oUl1 = document.getElementById('ul1');
+        var oLi1 = oUl1.getElementsByTagName('li');
+        var now = 0;
+        for(var i=0 ; i<oLi.length ; i++){
+            oLi[i].count = i;
+            oLi[i].onmouseover = function () {
+                for(i=0 ; i < oLi.length ; i++){
+                    oLi[i].className = '';
+                    oDiv[i].className = '';
+                }
+                this.className = 'show';
+                oDiv[this.count].className = 'show';
+                now = this.count;
+            }
+        }
+        for (i=0 ; i<oLi1.length ; i++) {
+            oLi1[i].count = i;
+            oLi1[i].onclick = function () {
+                if (this.count == 0) {
+                    now--;
+                    if (now == -1) {
+                        now = oDiv.length - 1;
+                    }
+                    for ( i = 0; i < oDiv.length; i++) {
+                        oDiv[i].className = '';
+                        oLi[i].className = '';
+                    }
+                    oDiv[now].className = 'show';
+                    oLi[now].className = 'show';
+//                    for(var i=0 ; i<oDiv.length ; i++){
+//                        if(oDiv[i].className == 'show'){
+//                            if(i == 0){
+//                                console.log(0);
+//                                oDiv[i].className = '';
+//                                oDiv[oDiv.length-1].className = 'show';
+//                            }else{
+//                                console.log(1);
+//
+//                                oDiv[i].className = '';
+//                                oDiv[i-1].className = 'show';
+//                            }
+//                        }
+//                    }
+                }
+                else {
+                    now++;
+                    if (now == oDiv.length) {
+                        now = 0
+                    }
+                    for ( i = 0; i < oDiv.length; i++) {
+                        oDiv[i].className = '';
+                        oLi[i].className = '';
+                    }
+                    oDiv[now].className = 'show';
+                    oLi[now].className = 'show';
+                }
+            }
+        }
+        var mousr = function () {
+            var timer = setInterval(function () {
+                for(var i=0 ; i< oDiv.length ; i++){
+                    oDiv[i].className = '';
+                    oLi[i].className = '';
+                }
+                now++;
+                if(now == oDiv.length){
+                    now = 0;
+                }
+                oDiv[now].className = 'show';
+                oLi[now].className = 'show';
+            }, 500);
+            oDiv1.onmouseover = function () {
+                clearInterval(timer);
+            };
+            oUl.onmouseover = function () {
+                clearInterval(timer);
+            };
+            oUl1.onmouseover = function () {
+                clearInterval(timer);
+            };
+            oDiv1.onmouseout = function () {
+                mousr();
+            };
+        };
+        mousr();
+    </script>
+</div>
+</body>
+</html>
