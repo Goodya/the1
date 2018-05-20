@@ -21,6 +21,8 @@
             bottom: 10px;
         }
         #ul li{
+            background: #000;
+            color: #f2f2f2;
             list-style: none;
             width: 20px;
             height: 20px;
@@ -58,6 +60,7 @@
             text-align: center;
             line-height: 15px;
             cursor: pointer;
+
         }
         #ul .show{
             background: #29CC8B;
@@ -112,7 +115,7 @@
                 this.className = 'show';
                 oDiv[this.count].className = 'show';
                 now = this.count;
-            }
+            };
         }
         for (i=0 ; i<oLi1.length ; i++) {
             oLi1[i].count = i;
@@ -147,7 +150,7 @@
                     reset();
                     update();
                 }
-            }
+            };
         }
         var mousr = function () {
             var timer = setInterval(function () {
@@ -166,6 +169,9 @@
             };
         };
         mousr();
+        oDiv0.onselectstart = function () {
+            return false ;
+        }
     </script>
 </div>
 </body>
