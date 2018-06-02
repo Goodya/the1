@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="add">增加</button>
+<ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+
+<script>
+    var oUl1 = document.getElementById('ul1');
+    var oAdd = document.getElementById('add');
+    oUl1.onclick = function(e){
+        var target = null;
+        if(e){
+            target = e.target
+        }else{
+            target = window.event.srcElement;
+        }
+        console.log(target);
+    };
+    oAdd.onclick = function () {
+        var oLi = document.createElement('li');
+        oLi.innerHTML = Math.random();
+        oUl1.appendChild(oLi);
+    }
+
+</script>
+</body>
+</html>
