@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #000;
+            perspective: 800px;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            -webkit-transform-style: preserve-3d;
+            backface-visibility: visible;
+            position: relative;
+            animation:run 2s linear infinite ;
+
+        }
+        @keyframes run {
+            0%{
+
+            }
+            50%{
+                -webkit-transform: rotateY(180deg) translateX(-200px);
+            }
+            100%{
+                -webkit-transform: rotateY(360deg)
+            }
+        }
+        #div1 div{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+            background: rgba(255, 255, 255, 0.5)
+        }
+        #one{
+            transform: rotateX(-90deg);
+            transform-origin: 0 0;
+
+        }
+        #two{
+            transform: translateZ(-200px) rotateY(180deg);
+
+        }
+        #three{
+            transform: rotateY(-90deg) translateX(-200px);
+            transform-origin: 0 0;
+
+
+        }
+        #five{
+            transform-origin: 200px 0;
+            transform: rotateY(90deg) translateX(200px)
+        }
+        #six{
+            transform-origin: 0 200px;
+            transform: rotateX(90deg);
+        }
+
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div id="one">1</div>
+    <div id="two">2</div>
+    <div id="three">3</div>
+    <div id="four">4</div>
+    <div id="five">5</div>
+    <div id="six">6</div>
+</div>
+</body>
+</html>
