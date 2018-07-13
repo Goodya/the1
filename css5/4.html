@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<button id="btn">click</button>
+<div id="content">
+
+</div>
+
+<script>
+    var oBtn = document.querySelector('#btn');
+    var oCon = document.querySelector('#content');
+    var obj = {};
+    oBtn.onclick = function () {
+        var ary = [];
+        for(var i = 0 ; i < 7 ; i++){
+            ary.push(Math.floor(1 + 35 * Math.random()));
+        }
+        oCon.innerHTML = ary;
+        history.pushState(ary,'');
+    };
+    window.onpopstate = function (e) {
+        oCon.innerHTML = e.state;
+    }
+
+</script>
+
+</body>
+</html>
