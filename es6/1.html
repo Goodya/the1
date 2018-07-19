@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+    </ul>
+    <script>
+        var oLi = document.querySelectorAll('li');    
+        // for(var i=0 ; i<oLi.length ; i++){
+        //     (function(idx){
+        //         oLi[i].onclick = function(){
+        //             console.log(idx);
+        //         }
+        //     })(i)
+        // }
+        for(let i=0 ; i<oLi.length ; i++){
+            oLi[i].onclick = function(){
+                console.log(i);
+            }
+        }
+        const obj = {
+            name:'11',
+            age:5
+        }
+        let{age,name} = obj;
+        console.log(name,age);
+        Object.freeze(obj);
+        obj.age = 6;
+        console.log(obj);
+        let [a,b,c,d] = [1,2,[3,4],5];
+        console.log(a,b,c,d);
+
+    </script>
+</body>
+</html>
