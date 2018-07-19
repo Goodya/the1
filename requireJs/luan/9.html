@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #left{
+
+            width: 200px;
+            height: 400px;
+            background: #ff0000;
+        }
+        #right{
+            height: 400px;
+            background: #00ff00;
+            position: relative;
+            left: 210px;
+            top: -400px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="left"></div>
+<div id="right"></div>
+<script>
+    var oLeft = document.getElementById("left");
+    var oRight = document.getElementById("right");
+    if(oLeft.offsetHeight > oRight.offsetHeight){
+        oRight.offsetHeight = oLeft.offsetHeight;
+    }else{
+        oLeft.offsetHeight = oRight.offsetHeight;
+    }
+
+</script>
+</body>
+</html>

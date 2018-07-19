@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #ul1 li{
+            list-style: none;
+            width: 100px;
+            height: 30px;
+            background: #ccc;
+            float: left;
+            margin-right: 3px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        #ul1{
+            width: 400px;
+            height: 30px;
+            border-bottom: solid 1px ;
+        }
+        #div{
+            width: 400px;
+            height: 350px;
+            border: solid 1px ;
+            margin: 100px auto ;
+            background: #eee;
+        }
+        #ul1 .first{
+            background: #000;
+            color: #f2f2f2;
+        }
+        #div div{
+            display: none;
+        }
+        #div .div1{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <ul id="ul1">
+            <li class="first" id="li1">1</li>
+            <li id="li2">2</li>
+            <li id="li3">3</li>
+        </ul>
+        <div class="div1">
+            1
+        </div>
+        <div>
+            2
+        </div>
+        <div>
+            3
+        </div>
+    </div>
+
+    <script>
+        var oDiv = document.getElementById('div');
+        var oDiv1 = oDiv.getElementsByTagName('div');
+        var oUl1 = document.getElementById('ul1');
+        var oLi = oUl1.getElementsByTagName('li');
+        for(var i=0 ; i < oLi.length ; i++){
+            oLi[i].xx = i;
+            oLi[i].onclick = function () {
+                for (var j=0 ; j < oLi.length ; j++){
+                    oLi[j].className = "";
+                    oDiv1[j].className = '';
+                }
+                this.className = 'first';
+                oDiv1[this.xx].className = 'div1';
+            }
+        }
+
+    </script>
+</body>
+</html>

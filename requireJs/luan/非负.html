@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var i=0;
+    function judge(data) {
+        return (data % 3 == 0 && data % 5 == 0 && data % 7 == 0);
+    }
+    for( var number=1 ; number <= 1000 ; number++){
+        if(judge(number)){
+                document.write(number + " ");
+                i+=1;
+                if(i%6 == 0){
+                    document.write("<br>");
+                }
+            }
+        }
+</script>
+
+</body>
+</html>

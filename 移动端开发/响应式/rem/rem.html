@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="rem.js"></script>
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jquery.mobile-1.4.5.js"></script>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="jquery.mobile.icons.min.css"/>
+    <style>
+        #div1{
+            display: flex ;
+            flex-direction: row;
+        }
+        #div1 div{
+            /*-webkit-box-flex-group: 1;*/
+            width: 50px;
+            height: 50px;
+            background: #ff0000;
+            border-radius: 100%;
+        }
+        #div1 a{
+            text-decoration: none;
+            color: #1b1b1b;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+<header>
+    <span>位置</span>
+    <div data-role="fieldcontain">
+        <input type="search" id="search">
+    </div>
+
+    <a href="#anylink" data-role="button" data-icon="search">我的</a>
+</header>
+
+<!--<div id="div1">-->
+    <!--<div><a href="">美食</a></div>-->
+    <!--<div><a href="">电影</a></div>-->
+    <!--<div><a href="">娱乐</a></div>-->
+    <!--<div><a href="">酒店</a></div>-->
+    <!--<div><a href="">ktv</a></div>-->
+<!--</div>-->
+
+</body>
+</html>

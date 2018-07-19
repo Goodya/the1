@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #small{
+            width: 400px;
+            height: 400px;
+            float: left;
+            position: relative;
+        }
+        #big{
+            width: 400px;
+            height:400px;
+            overflow: hidden;
+            float: left;
+            display: none;
+            position: relative;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: #cccccc;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: .5;
+            display: none;
+        }
+        #big-image{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="small">
+    <img src="1.jpg" alt="">
+    <div id="drag"></div>
+</div>
+<div id="big">
+    <img src="2.jpg" alt="" id="big-image">
+</div>
+
+<script>
+    var oSmall = document.getElementById('small');
+    var oBig = document.getElementById('big');
+    var oDrag = document.getElementById('drag');
+    var oBigImage = document.getElementById('big-image');
+console.log(oSmall.offsetTop);
+    oSmall.onmouseover = function () {
+        oBig.style.display = 'block';
+        oDrag.style.display = 'block';
+    };
+    oSmall.onmousemove = function (e) {
+        var disx = e.clientX - oSmall.offsetLeft - oDrag.offsetWidth / 2 ;
+        var disy = e.clientY - oSmall.offsetTop - oDrag.offsetHeight / 2 ;
+        if(disx > oSmall.offsetWidth - oDrag.offsetWidth){
+            disx = oSmall.offsetWidth - oDrag.offsetWidth;
+        }else if(disx < 0){
+            disx = 0
+        }
+        if(disy > oSmall.offsetHeight - oDrag.offsetHeight){
+            disy  = oSmall.offsetHeight - oDrag.offsetHeight
+        }else if(disy < 0){
+            disy = 0
+        }
+        oDrag.style.left = disx + 'px';
+        oDrag.style.top = disy + 'px';
+        var scranX = disx / (oSmall.offsetWidth - oDrag.offsetWidth);
+        var scranY = disy / (oSmall.offsetHeight - oDrag.offsetHeight);
+        var x = scranX * (oBigImage.offsetWidth - oBig.offsetWidth);
+        var y = scranY * (oBigImage.offsetHeight - oBig.offsetHeight);
+        oBigImage.style.left = - x + 'px';
+        oBigImage.style.top = - y + 'px'
+    };
+    oSmall.onmouseout = function () {
+        oBig.style.display = 'none';
+        oDrag.style.display = 'none';
+    }
+</script>
+</body>
+</html>

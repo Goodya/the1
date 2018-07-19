@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .div{
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            float: left;
+            border: solid 1px red;
+        }
+        #div{
+            width: 104px;
+            height: 104px;
+            position: relative;
+        }
+        #div .div2{
+            border-left: 0;
+        }
+        #div .div1{
+            border-top: 0;
+        }
+        #one:hover{
+            border: solid 1px #00ff00;
+        }
+        #three{
+            position: absolute;
+            top: 52px;
+        }
+        #four{
+            position: absolute;
+            top: 52px;
+            left:52px;
+        }
+        #two:hover{
+            border: solid 1px #00ff00;
+            position: absolute;
+            right: 1px;
+            top:0;
+        }
+        #three:hover{
+            border: solid 1px #00ff00;
+            top:51px;
+        }
+        #four:hover{
+            border: solid 1px #00ff00;
+            top: 51px;
+            left:51px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="div">
+    <div class="div " id="one">1</div>
+    <div class="div div2 " id="two">2</div>
+    <div class="div div1" id="three">3</div>
+    <div class="div div2 div1" id="four">4</div>
+</div>
+</body>
+</html>

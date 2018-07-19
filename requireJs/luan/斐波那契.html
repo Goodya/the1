@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function series(n) {
+        if(n == 1 || n == 2){
+            return 1
+        }
+        return series(n-1) + series(n-2);
+    }
+    var array = [];
+    for(var i = 1 ; i <= 40 ; i++){
+        array[i-1] = series(i);
+    }
+    var array1 = array.reverse();
+    for(var j = 0 ; j <= 39 ; j++){
+        document.write(array1[j]);
+        if((j+1)%6 == 0 || j+1 == 40){
+            document.write("<br>");
+        }else document.write(",");
+    }
+
+
+</script>
+</body>
+</html>

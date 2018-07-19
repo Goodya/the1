@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    var Ntime = new Date();
+        function timer(year,month,day) {
+            var Ttime = new Date();
+            Ttime.setFullYear(year);
+            Ttime.setMonth(month-1);
+            Ttime.setDate(day);
+            Ttime.setHours(0);
+            Ttime.setSeconds(0);
+            Ttime.setMinutes(0);
+            var Nsecond = Ntime.getTime();
+            var Tsecond = Ttime.getTime();
+            var cha = Tsecond-Nsecond;
+            var Tday;
+            var Thour;
+            var Thesecond;
+            var minutes = 1000*60;
+            var hours = minutes*60;
+            var days = hours*24;
+            if(Tsecond > Nsecond){
+                Tday = Math.floor((cha / days));
+                Thour = Math.floor( (cha-Tday*days)/hours );
+                Thesecond = (cha-Tday*days-Thour*hours)/1000;
+                document.write( "距离"+ year +"年"+ month +"月"+ day +"日还有" + Tday+"天" + Thour+"小时"+ Thesecond+"秒" )
+            }else {
+                document.write("时间已经过去啦！");
+            }
+        }
+        timer(2018,7,11);
+</script>
+</body>
+</html>

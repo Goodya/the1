@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jquery.mobile-1.4.5.js"></script>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="jquery.mobile.icons.min.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #content{
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        #above{
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #above img{
+            width: 100%;
+            height: 100%;
+        }
+        #content img{
+            width: 25%;
+            height: 16vh;
+            border: solid 1px #000 ;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<div id="above">
+    <img src="" alt="">
+</div>
+<div id="content">
+
+</div>
+<script>
+    var count = 0;
+    var oContent = document.getElementById('content');
+    var oAbove = document.getElementById('above');
+    var oImage = oAbove.getElementsByTagName('img')[0];
+    for(var i=1 ; i<=24 ; i++){
+        var oImg = document.createElement('img');
+        oImg.index = i;
+        oImg.src = 'img/'+ i +'.jpg';
+        oContent.appendChild(oImg);
+        $('#content img').on('tap',function () {
+            var idx = this.index;
+            count = idx;
+            oImage.src = 'img/'+ idx +'.jpg';
+            oAbove.style.display = 'block';
+            oContent.style.display = 'none';
+            return false;
+        })
+    }
+    $('#above').on('tap',function () {
+        oAbove.style.display = 'none';
+        oContent.style.display = 'block';
+        return false;
+    });
+    $('#above img').on('swipeleft',function () {
+        count++;
+        if(count == 25){
+            count = 1;
+        }
+        oImage.src = 'img/'+ count +'.jpg';
+    });
+    $('#above img').on('swiperight',function () {
+        count--;
+        if(count == 0){
+            count = 24;
+        }
+        oImage.src = 'img/'+ count +'.jpg';
+    });
+
+
+</script>
+</body>
+</html>

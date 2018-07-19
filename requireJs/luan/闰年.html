@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var today= new Date(),year = today.getFullYear();
+    if ( (year%4 == 0 && year%100 != 0) || year%400 == 0){
+        alert(today + "是闰年")
+    }else{
+        alert(today + "不是闰年")
+    }
+
+</script>
+</body>
+</html>

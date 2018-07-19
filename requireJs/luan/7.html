@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function repeat(func,times,wait) {
+        function a(e) {
+            setInterval(function(){
+                for(var i=0 ; i<times ; i++){
+                    func(e);
+                }
+            },wait)
+        }
+        return a;
+    }
+    var repeatFunc = repeat(alert,4,3000);
+    repeatFunc('helloworld');
+</script>
+</body>
+</html>

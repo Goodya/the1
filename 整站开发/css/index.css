@@ -1,0 +1,16 @@
+.logo{
+    position: absolute;
+    font-size: 15px;
+    top: 30px;
+}
+.wrapper{
+    position: relative;
+}
+.menu{
+    width: 669px;
+    float: right;
+}
+.menu li{
+    float: left;
+    margin-right: 5px;
+}

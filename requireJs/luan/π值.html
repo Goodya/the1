@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function pi(n) {
+        var n1,sum=0;
+        for(var i=1 ;i<=n ; i++){
+            n1=2*i-1;
+            if(i%2 != 0){
+                sum += 1/n1;
+            }else sum -= 1/n1;
+        }
+        return 4*sum ;
+    }
+    document.write("π的值为：" + pi(100) + "<br>");
+    document.write("π的值为：" + pi(500) + "<br>");
+    document.write("π的值为：" + pi(1000) + "<br>");
+    document.write("π的值为：" + pi(10000) + "<br>");
+
+</script>
+
+</body>
+</html>

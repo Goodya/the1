@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function DayOfYear(year,month,day) {
+        var months = [31,28,31,30,31,30,31,31,30,31,30,31];
+        if(year%4 == 0 && year%100 !=0 || year%400 == 0){
+            months[1] = 29;
+        }
+        var amount = 0;
+        for(var i = 1 ; i <= month-1 ; i++){
+            amount += months[i-1];
+        }
+        document.write(amount + day);
+    }
+    DayOfYear(1904,12,31);
+
+
+</script>
+
+</body>
+</html>

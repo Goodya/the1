@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var num1,num2,num3;
+    function pro() {
+        var j=0 ;
+        for (var i=1 ; i <= 10000000 ; i++ ){
+            num1 = Math.floor(1 + 9 * Math.random());
+            num2 = Math.floor(1 + 9 * Math.random());
+            num3 = Math.floor(1 + 9 * Math.random());
+            if (num1 == 8 || num2 == 8 || num3 == 8){
+                j += 1;
+            }
+        }
+        document.write("概率为："  + j/10000000);
+    }
+    pro();
+
+</script>
+</body>
+</html>
