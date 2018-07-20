@@ -1,0 +1,43 @@
+..<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function aa(){
+            var arr = [1,2,3,3,4,4,5]; 
+            var result = [];
+            var obj = {
+
+            };
+            for(var i=0 ; i<arr.length ; i++){
+                var key = arr[i];
+                index = 0;
+                if(!(key in obj)){
+                    obj[key] = 0;
+                }
+                for(var j=0 ; j<arr.length ; j++){
+                    if(arr[i] == arr[j]){
+                        index++;
+                    }
+                }
+                if(index == 1){
+                        result.push(arr[i]);
+                    }else{
+                        obj[key] = obj[key] + 1;
+                        if(obj[key] == 1){
+                            result.push(arr[i]);
+                        }
+                    }
+            }
+            return result;
+        }    
+        console.log ( aa() );
+    
+    </script>
+</body>
+</html>
