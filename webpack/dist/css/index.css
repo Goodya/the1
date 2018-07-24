@@ -1,0 +1,7 @@
+/*! 洋哥好！ */
+body {
+  background: #0000ff;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  position: absolute;
+}
