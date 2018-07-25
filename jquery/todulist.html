@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #content{
+        width: 500px;
+        margin: 100px auto;
+        font-weight: 700;
+    }
+    li{
+        list-style: none;
+    }
+    button{
+        border-radius: 5px;
+        background: #ffffff;
+    }
+    header{
+        text-align: center;
+        border-bottom: 1px solid #000;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    #content .list{
+        width: 100%;
+        height: 50px;
+        margin: 10px 0 ;
+        background: #cccccc;
+        line-height: 50px;
+        border: #cccccc 1px solid;
+    }
+    #content .list span{
+        margin-left: 50px;
+    }
+    #list{
+        position: relative;
+    }
+    #content .list div{
+        position: absolute;
+        left: 20px;
+    }
+    .right{
+        position: absolute;
+        right: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <header>todolist</header>
+        名称：<input type="text" value="请输入产品名称">
+        价格：<input type="text" value="0">
+        <button id='add'>增加</button>
+        <input type="text" value="请输入搜索关键字">
+        <button id="search">查询</button>
+        <ul id="list">
+            <li class="list">
+                <div>[X]</div>
+                <input type="checkbox" name="items" value="衣服" ><span>衣服</span>
+                <span class="right">59</span>
+            </li>
+            <li class="list">
+                <div>[X]</div>
+                <input type="checkbox" name="items" value="裤子"><span>裤子</span> 
+                <span class="right">60</span>
+            </li>
+            <li class="list">
+                <div>[X]</div>
+                <input type="checkbox" name="items" value="鞋"><span>鞋</span> 
+                <span class="right">88</span>
+            </li>
+            <li class="list">
+                <div>[X]</div>
+                <input type="checkbox" name="items" value="手机"><span>手机</span>
+                <span class="right">8888</span>
+            </li>
+            <li class="list">
+                <div>[X]</div>
+                <input type="checkbox" name="items" value="电脑"><span>电脑</span>
+                <span class="right">6666</span>
+            </li>
+        </ul>
+        <button id="delete">删除选中</button>
+        总价：
+        <span id="price">0</span>
+    </div>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    $('ul').on('click','li',function(e){
+        var idx = $(this).find('input').prop('checked')
+        var total = 0;
+        if($(this).hasClass('remove')){
+            $(this).removeClass('remove');
+            $(this).css('background','#ccc').find('input').prop('checked','');
+            total = $('#price').html()*1 - $(this).find('.right').html()*1
+        }else{
+            $(this).css('background','#f00').find('input').prop('checked','true');
+            $(this).addClass('remove');
+            total = $('#price').html()*1 + $(this).find('.right').html()*1
+        }
+        $('#price').html(total);
+    }) 
+    $(':input').focus(function(){
+        if($(this).val() == this.defaultValue){
+            this.value = "";
+        }
+    }).blur(function(){
+        $(this).removeClass("focus").val(this.value==""?this.defaultValue:this.value);
+    })
+    $("#delete").on("click",function(){
+        $('li[class="list remove"]').remove();
+        // $('input[checked = "true"]').parents('li').remove();
+    })
+    $('#add').on('click',function(){
+        var one = $('input:nth-child(2)').val();
+        var two = $("input:nth-child(3)").val();
+        $('#list').append(`<li class="list"><div>[X]</div><input type="checkbox" name="items" value="${one}"><span>${one}</span><span class="right">${two}</span></li>`)
+    })
+    $('#search').on('click',function(){
+        var three = $("input:nth-child(5)").val();
+        $('#list li').hide().filter(`:contains(${three})`).show();
+    })
+    $('#list').on('click','div',function(){
+        $(this).parent().remove();
+    })
+
+</script>
+</body>
+</html>
