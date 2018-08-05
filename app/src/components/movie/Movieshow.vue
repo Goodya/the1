@@ -40,11 +40,11 @@
             load(){
                 axios.get('./static/data/moviedetail.json').then(res => {
                 this.movieList = res.data.data.movie.hcmts;
-                console.log(this.movieList);
+                // console.log(this.movieList);
                 this.movieList.forEach(element => {
                     if(element.id == this.Id){
                         element.isshow = true;
-                        console.log(element,element.isshow)
+                        // console.log(element,element.isshow)
                     }
                 });
            }).catch(res => {

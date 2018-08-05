@@ -5,6 +5,7 @@ import Movieshow from '@/components/movie/movieshow'
 import MusicList from '@/components/music/MusicList'
 import MusicShow from '@/components/music/Musicshow'
 import ImageList from '@/components/image/imageList'
+import imageShow from '@/components/image/imageshow'
 import BookList from '@/components/book/bookList'
 import "@/assets/rem"
 import "@/assets/common.css"
@@ -28,6 +29,10 @@ export default new Router({
     {
       path: '/image/imagelist',
       component: ImageList
+    },
+    {
+      path: '/image/imageshow/:idx',
+      component: imageShow
     },
     {
       path: '/music/musiclist',
