@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+#header{
+    width:1366px;
+    height:80px;
+    background:rgba(255,255,255,1);
+    font-size:18px;
+    font-family:PingFangSC-Regular;
+    color:rgba(51,51,51,1);
+}
+#header a{
+    font-size:18px;
+    font-family:PingFangSC-Regular;
+    color:rgba(51,51,51,1);
+}
+
+#header div{
+    height: 100%;
+    line-height: 80px;
+}
+#header .h_left{
+    margin-left: 70px;
+    float: left;
+}
+#header .h_left div{
+    float: left;
+    margin-right: 17px;
+}
+#h_tb{
+    position: relative;
+    bottom:5px;
+}
+#top{
+    width:72px;
+    height:17px;
+    font-size:18px;
+    font-family:PingFangSC-Semibold;
+    color:rgba(51,51,51,1);
+}
+#bottom{
+    width:75px;
+    height:9px;
+    font-size:12px;
+    font-family:Helvetica-Bold;
+    color:rgba(51,51,51,1);
+}
+#header .h_menu div{
+    float: left;
+}
+#header .h_right{
+    float: right;
+    margin-right: 82px;
+}
+#h_search{
+    width:300px;
+    height:40px;
+    background:rgba(255,255,255,1);
+    border-radius:20px;
+    border: 1px solid #DDDDDD;
+    text-indent: 14px;
+    margin-right: 39px;
+    outline: none;
+}
+#header .h_login{
+    margin-right: 20px;
+}
+#header .h_login a{
+    font-size:18px;
+    font-family:PingFangSC-Regular;
+    color:rgba(51,51,51,1);
+}
