@@ -1,6 +1,9 @@
 a {
     text-decoration: none;
 }
+body{
+    height: 2000px;
+}
 #header{
     position: absolute;    
     left: 0;
@@ -17,8 +20,13 @@ font-size: 0;
 
 }
 .fd-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 60px;
     background: #828282;
+    border-bottom: 2px #ffffff solid ;
     padding: 0 30px 0 0;
 
 }
@@ -26,5 +34,31 @@ font-size: 0;
     float: right;
     margin: 21px 0 0 40px;
     color: #ffffff;
+}
+.fd-nav-right:hover {
+    color: orange;
+}
+#nav-seach{
+    
+}
+#nav-submit{
+    position: relative;
+    top: 1px;
+    background:#828282;
+    color: #ffffff;
+    border: 2px solid #ffffff ;
+    border-radius:25px;
+}
+#nav-submit:hover{
+    background: orange;
+    color: #ffffff;
+}
+.fd-nav-left {
+    float: left;
+    margin: 21px 0 0 200px;
+    color: #ffffff;
+}
+.fd-wapper{
+    width: 100%;
 
 }
