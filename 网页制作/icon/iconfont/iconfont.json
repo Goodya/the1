@@ -41,6 +41,13 @@
       "unicode_decimal": 58905
     },
     {
+      "icon_id": "3764006",
+      "name": "电话",
+      "font_class": "weibiaoti-",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
       "icon_id": "5334201",
       "name": "网站信息",
       "font_class": "wangzhanxinxi",
@@ -53,6 +60,20 @@
       "font_class": "weixin",
       "unicode": "e686",
       "unicode_decimal": 59014
+    },
+    {
+      "icon_id": "8327186",
+      "name": "qq",
+      "font_class": "qq",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "10809887",
+      "name": "向上 箭头",
+      "font_class": "changyongtubiao-xianxingdaochu-zhuanqu-",
+      "unicode": "e74c",
+      "unicode_decimal": 59212
     }
   ]
 }
