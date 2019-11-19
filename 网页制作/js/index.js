@@ -76,12 +76,22 @@
   var oWapper1 = document.getElementsByClassName("fd-wapper1")
   var iNowIndex = 0;
   var time = null;
-  var speed;
-  var curr;
   var Width = oWapper1[1].offsetWidth;
   var bStop = true;
-  var oContainer = document.getElementById("js-container")
+  var oContainer = document.getElementById("js-container");
+  var oUl = document.getElementsByClassName("js-fd-ul")[0];
+  var oLi = oUl.getElementsByTagName("li");
+  console.log(oWapper1);
+  var time1 = null;
 
+  //给每个li设置属性为自己的索引
+  for (var i = 0; i < oLi.length; i++) {
+    oLi[i].index = i;
+    oLi[i].onclick = function () {
+      iNowIndex = this.index;
+      change();
+    };
+  }
   //获取属性的方法。
   function getStyle(elem, attr) {
     if (elem.currentStyle) { //IE
@@ -104,36 +114,52 @@
 
   //轮播主方法
   function change() {
+    if(iNowIndex == 5){
+      for (var i = 0; i < oWapper1.length; i++) {
+        oWapper1[i].style.left = i * Width + "px";
+      }
+      iNowIndex = 1;
+    }
+    //把li的class全清空
+    for (var i = 0; i < oLi.length; i++) {
+      oLi[i].className = '';
+    }
+    if (iNowIndex == 4) {
+      oLi[0].className = 'fd-selected';
+    } else {
+      oLi[iNowIndex].className = 'fd-selected';
+    }
 
     time = setInterval(function () {
       for (var i = 0; i < oWapper1.length; i++) {
-        oWapper1[i].curr = parseInt(getStyle(oWapper1[i], "left"));
-        oWapper1[i].speed = ((i - iNowIndex) * Width - oWapper1[i].curr) / 8;
+        oWapper1[i].curr = parseInt(getStyle(oWapper1[i], "left")); //对象当前left值
+        oWapper1[i].speed = ((i - iNowIndex) * Width - oWapper1[i].curr) / 8; //轮播速度控制
 
-        oWapper1[i].style.left = oWapper1[i].speed + oWapper1[i].curr + "px";
+        oWapper1[i].style.left = oWapper1[i].speed + oWapper1[i].curr + "px"; //移动距离赋值
         if (oWapper1[i].curr != (i - iNowIndex) * Width) {
           bStop = false;
         }
         if (bStop) {
           clearInterval(time);
         }
+        bStop = true;
       }
-    }, 30)
+
+
+    }, 30);
+
 
   }
 
-  // function play() {
-  //   var time1 = setInterval(function () {
-  //     iNowIndex++;
-  //     if (iNowIndex == 4) {
-  //       iNowIndex = 0
-  //     }
-  //     change();
-  //   }, 5000)
-  //   iNowIndex++;
-  //   change()
-  // }
-  // play();
+  function play() {
+
+    time1 = setInterval(function () {
+      iNowIndex++;
+      change();
+    }, 1000);
+  }
+
+  play();
 
 
 })()
