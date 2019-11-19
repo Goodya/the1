@@ -9,7 +9,10 @@ a {
 }
 
 #header {
+    position: relative;
     width: 100%;
+    height: 550px;
+    overflow: hidden;
 }
 
 .fd-clearfix:after {
@@ -73,17 +76,42 @@ a {
 }
 
 .fd-wapper {
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 1349px;
     height: 550px;
     z-index: 10;
+    /* background: url(../img/bg1.jpg) 100% 100%; */
+}
+.fd-wapper1{
+    position: absolute;
+    width: 1349px;
+    height: 550px;
+
+}
+.fd-wapper1:nth-child(1){
     background: url(../img/bg1.jpg) 100% 100%;
+    left: 0;
+}
+.fd-wapper1:nth-child(2){
+    background: url(../img/bg12.jpg) 100% 100%;
+    left: 1349px;
+}
+.fd-wapper1:nth-child(3){
+    background: url(../img/bg13.jpg) 100% 100%;
+    left: 2798px;
+}
+.fd-wapper1:nth-child(4){
+    background: url(../img/bg14.jpg) 100% 100%;
+    left: 4147px;
 }
 
-#fd-bg1 {
+.fd-bg1 {
     height: 200px;
     width: 100%;
     position: absolute;
-    top: 100px;
+    top: 80px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -97,13 +125,13 @@ a {
     margin-bottom: 30px;
 }
 
-#text1 {
+.fd-text1 {
     color: #ffffff;
-    font-size: 40px;
+    font-size: 44px;
     font-weight: 900;
 }
 
-#text2 {
+.fd-text2 {
     margin: 0 auto;
     /* position: absolute;
     left: 50%;
@@ -144,6 +172,7 @@ a {
     width: 170px;
     height: 170px;
     background: #eaeaea;
+    transition: all 0.8S;
     border: #f3f3f3 8px solid;
     border-radius: 100%;
     text-align: center;
@@ -307,6 +336,7 @@ a {
     height: 50px;
     border: 1px solid #e0e0e0;
     border-radius: 50%;
+    transition: all 4s;
     margin: 0 auto;
     text-align: center;
 }
@@ -463,6 +493,7 @@ a {
 }
 .fd-body-right{
     position: absolute;
+    transition: width 0.3s ;
     right: 0;
     width: 60px;
     height: 60px;
@@ -471,7 +502,8 @@ a {
     text-align: center;
     background: #E00012;
     border: 1px none #E00012;
-    border-radius: 100%;
+    border-radius: 30px;
+    cursor: pointer;
 }
 .fd-body-right:nth-child(2){
     top: 67px;
@@ -481,7 +513,6 @@ a {
 }
 .fd-body-right:hover{
     width: 180px;
-    border-radius: 30px;
 }
 .fd-body-left .iconfont{
     float: left;
@@ -493,7 +524,7 @@ a {
 .fd-hidden{
     font-size: 14px;
     line-height: 60px;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 
