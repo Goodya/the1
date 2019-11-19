@@ -88,7 +88,6 @@ a {
     position: absolute;
     width: 1349px;
     height: 550px;
-
 }
 .fd-wapper1:nth-child(1){
     background: url(../img/bg1.jpg) 100% 100%;
@@ -106,6 +105,17 @@ a {
     background: url(../img/bg14.jpg) 100% 100%;
     left: 4147px;
 }
+.fd-wp-ul{
+    width: 400px;
+    height: 30px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    margin-left: -200px;
+    background: red;
+}
+.fd-
 
 .fd-bg1 {
     height: 200px;
