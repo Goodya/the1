@@ -44,7 +44,7 @@
 
 
   var gotop = document.getElementById("js-top");
-  var timer = null;
+  var clicktimer = null;
 
 
 
@@ -52,7 +52,7 @@
   gotop.onclick = function () {
 
     //设置定时器
-    timer = setInterval(function () {
+    clicktimer = setInterval(function () {
       //获取滚动条距离顶部的高度
       var osTop = document.documentElement.scrollTop || document.body.scrollTop; //同时兼容了ie和Chrome浏览器
 
@@ -63,7 +63,7 @@
 
       //判断，然后清除定时器
       if (osTop <= 0) {
-        clearInterval(timer);
+        clearInterval(clicktimer);
       }
     }, 15);
 
@@ -113,7 +113,8 @@
 
   //轮播主方法
   function change() {
-    if(iNowIndex == 5){
+    //判断并重新定位
+    if (iNowIndex == 5) {
       for (var i = 0; i < oWapper1.length; i++) {
         oWapper1[i].style.left = i * Width + "px";
       }
@@ -123,6 +124,7 @@
     for (var i = 0; i < oLi.length; i++) {
       oLi[i].className = '';
     }
+    //给应该变色的li赋值class
     if (iNowIndex == 4) {
       oLi[0].className = 'fd-selected';
     } else {
@@ -137,13 +139,16 @@
         oWapper1[i].style.left = oWapper1[i].speed + oWapper1[i].curr + "px"; //移动距离赋值
         if (oWapper1[i].curr != (i - iNowIndex) * Width) {
           bStop = false;
+        }else{
+          bStop = true;
         }
-        if (bStop) {
+        
+      }
+      if (bStop) {
+          // console.log(1);
           clearInterval(time);
         }
         bStop = true;
-      }
-
 
     }, 30);
 
@@ -155,7 +160,7 @@
     time1 = setInterval(function () {
       iNowIndex++;
       change();
-    },2500);
+    }, 2500);
   }
 
   play();
