@@ -81,7 +81,6 @@
   var oContainer = document.getElementById("js-container");
   var oUl = document.getElementsByClassName("js-fd-ul")[0];
   var oLi = oUl.getElementsByTagName("li");
-  console.log(oWapper1);
   var time1 = null;
 
   //给每个li设置属性为自己的索引
@@ -156,7 +155,7 @@
     time1 = setInterval(function () {
       iNowIndex++;
       change();
-    }, 1000);
+    },2500);
   }
 
   play();
